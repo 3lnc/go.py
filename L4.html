@@ -2826,15 +2826,15 @@ Reveal.initialize({
 	transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
 	multiplex: {
-        secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
+        secret: '14459424100158784067', // Obtained from the socket.io server. Gives this (the master) control of the presentation
         id: '13e28c22779a3a60', // Obtained from socket.io server
-        url: 'rhttp://revealjs-51546.onmodulus.net:80' // Location of socket.io server
+        url: 'http://revealjs-51546.onmodulus.net:80' // Location of socket.io server
     },
 
     // Don't forget to add the dependencies
     dependencies: [
         { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
-        { src: 'reveal.js/plugin/multiplex/client.js', async: true },
+        { src: 'reveal.js/plugin/multiplex/master.js', async: true },
 
         { src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
 		{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
