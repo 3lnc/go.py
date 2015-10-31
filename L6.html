@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>L4 Data structures slides</title>
+<title>L6 Functions slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -223,7 +223,7 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-structures">Data structures<a class="anchor-link" href="#Data-structures">&#182;</a></h1>
+<h1 id="Some-useful-constructors-and-hints">Some useful constructors and hints<a class="anchor-link" href="#Some-useful-constructors-and-hints">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -233,7 +233,7 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Storing-numbers-and-strings-alone-is-great,-but-not-enough">Storing numbers and strings alone is great, but not enough<a class="anchor-link" href="#Storing-numbers-and-strings-alone-is-great,-but-not-enough">&#182;</a></h3>
+<h2 id="range"><code>range</code><a class="anchor-link" href="#range">&#182;</a></h2>
 </div>
 </div>
 </div></section><section>
@@ -243,229 +243,17 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="What-is-data-structure?">What is data structure?<a class="anchor-link" href="#What-is-data-structure?">&#182;</a></h4><p>Way to organize (simple) data to single logic entity</p>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Most-data-is-organized-to-some-structure">Most data is organized to some structure<a class="anchor-link" href="#Most-data-is-organized-to-some-structure">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-it-matters?">Why it matters?<a class="anchor-link" href="#Why-it-matters?">&#182;</a></h3><ul>
-<li>Every structure have different nature</li>
-<li>As well as different [performance] attributes</li>
-<li>Data structure is key to hi-perf algo</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Real-life:">Real life:<a class="anchor-link" href="#Real-life:">&#182;</a></h3><ul>
-<li>stack (fast add, long search)</li>
-<li>library shelf with name index (long add (index), fast access by name)</li>
-<li>accountant shelf (long add (realloc), fast access by date)</li>
-<li>colored stickers/spines (moderate add, fast access by category)</li>
-<li>etc.</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Data-structures">Data structures<a class="anchor-link" href="#Data-structures">&#182;</a></h4><ul>
-<li>is workhorses</li>
-<li>must feet your needs</li>
-<li><strong>super important</strong></li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Good-news:-you-are-free-to-choose">Good news: you are free to choose<a class="anchor-link" href="#Good-news:-you-are-free-to-choose">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment" data-fragment-index="8">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="...-and-thats-why-you-need-to-understand-them">... and thats why you need to understand them<a class="anchor-link" href="#...-and-thats-why-you-need-to-understand-them">&#182;</a></h4>
-</div>
-</div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Big-$\theta$-notation">Big $\theta$ notation<a class="anchor-link" href="#Big-$\theta$-notation">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$runtime = performance \times complexity$</p>
-<p>Computer perf. is "constant" - things that you can't influence</p>
-<p>Algo complexity ($\theta$) - abstract metric</p>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Speed-vs-route">Speed vs route<a class="anchor-link" href="#Speed-vs-route">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Consider-it-as-worst-possible-memory-access-count">Consider it as worst possible memory access count<a class="anchor-link" href="#Consider-it-as-worst-possible-memory-access-count">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$\theta(1)$ - get count of books from index</p>
-<p>$\theta(1)$ - add book to stack</p>
-<p>$\theta(1)$ - get book by index</p>
-<p>$\theta(log N)$ - get book using date index</p>
-<p>$\theta(N)$ - get all books</p>
-<p>$\theta(N?)$ - get book from stack</p>
-<p>$\theta(N?)$ - remove book from shelf</p>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Most-common-attribute-for-datastructure-ops-and-algo-performance">Most common attribute for datastructure ops and algo performance<a class="anchor-link" href="#Most-common-attribute-for-datastructure-ops-and-algo-performance">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Higher-bound-is-easy-to-get">Higher bound is easy to get<a class="anchor-link" href="#Higher-bound-is-easy-to-get">&#182;</a></h4><h4 id="Na&#239;ve-lower-is-easy-too">Na&#239;ve lower is easy too<a class="anchor-link" href="#Na&#239;ve-lower-is-easy-too">&#182;</a></h4><h4 id="Lowering-upper-bound-is-a-deal">Lowering upper bound is a deal<a class="anchor-link" href="#Lowering-upper-bound-is-a-deal">&#182;</a></h4>
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="list"><code>list</code><a class="anchor-link" href="#list">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Surprise!-List-is-what-it-sounds!">Surprise! List is what it sounds!<a class="anchor-link" href="#Surprise!-List-is-what-it-sounds!">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment" data-fragment-index="18">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sequence of objects, preserving order</p>
-
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>book index</li>
-<li>shoplist</li>
-<li>names list</li>
-<li>schedule</li>
-</ul>
-
+<h4 id="Generates-list-with-passed-&quot;rules&quot;">Generates list with passed "rules"<a class="anchor-link" href="#Generates-list-with-passed-&quot;rules&quot;">&#182;</a></h4>
 </div>
 </div>
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">shoplist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;eggs&#39;</span><span class="p">,</span> <span class="s">&#39;bread&#39;</span><span class="p">,</span> <span class="s">&#39;butter&#39;</span><span class="p">,</span> <span class="s">&#39;fish&#39;</span><span class="p">]</span>  <span class="c"># list of strings</span>
-<span class="n">shoplist</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -476,11 +264,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[53]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;eggs&apos;, &apos;bread&apos;, &apos;butter&apos;, &apos;fish&apos;]</pre>
+<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</pre>
 </div>
 
 </div>
@@ -488,15 +276,14 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="21">
+</div><div class="fragment" data-fragment-index="4">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">primal_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>  <span class="c"># list of ints</span>
-<span class="n">primal_numbers</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">type</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -511,7 +298,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[1, 2, 3, 5, 7, 11, 13]</pre>
+<pre>list</pre>
 </div>
 
 </div>
@@ -520,15 +307,14 @@ div.output_prompt {
 </div>
 
 </div>
-    </div><div class="fragment" data-fragment-index="22">
+    </div><div class="fragment" data-fragment-index="5">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">mash</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="s">&#39;word&#39;</span><span class="p">]</span>
-<span class="n">mash</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -543,7 +329,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[1, 3.14, (2+8j), &apos;word&apos;]</pre>
+<pre>[5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</pre>
 </div>
 
 </div>
@@ -552,117 +338,14 @@ div.output_prompt {
 </div>
 
 </div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Objects in list is just like symbols in strings</p>
-
-</div>
-</div>
-</div><div class="fragment" data-fragment-index="24">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Artur&#39;</span><span class="p">,</span> <span class="s">&#39;Oksana&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">,</span> <span class="s">&#39;Maria&#39;</span><span class="p">]</span>
-<span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># accessing by index</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&apos;John&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="25">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>David
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="26">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>  <span class="c"># gettings size</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>6</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="27">
+    </div><div class="fragment" data-fragment-index="6">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;Oksana&#39;</span><span class="p">)</span>  <span class="c"># searching for single element</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -677,7 +360,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3</pre>
+<pre>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28]</pre>
 </div>
 
 </div>
@@ -686,15 +369,14 @@ div.output_prompt {
 </div>
 
 </div>
-    </div></section><section>
+    </div><div class="fragment" data-fragment-index="7">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c"># counting elements</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -705,11 +387,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3</pre>
+<pre>[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</pre>
 </div>
 
 </div>
@@ -717,14 +399,97 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="29">
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="xrange">xrange<a class="anchor-link" href="#xrange">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Object-with-some-mystery-type">Object with some mystery type<a class="anchor-link" href="#Object-with-some-mystery-type">&#182;</a></h4><p>Can be used for construction or iteration</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>xrange(10)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment" data-fragment-index="11">
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="nb">type</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>xrange</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment" data-fragment-index="12">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="nb">list</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -739,7 +504,38 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment" data-fragment-index="13">
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="nb">tuple</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0, 2, 4, 6, 8, 10, 12, 14, 16, 18)</pre>
 </div>
 
 </div>
@@ -755,31 +551,68 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lists-are-mutable">Lists are mutable<a class="anchor-link" href="#Lists-are-mutable">&#182;</a></h3>
+<ul>
+<li>Easier to construct non-list DS</li>
+<li>Consumes <strong>much less</strong> memory</li>
+<li>Perform faster</li>
+</ul>
+
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="31">
+</div></section>
+    </section><section>
+    <section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means, you can change them in runtime</p>
+<h1 id="Comprehensions">Comprehensions<a class="anchor-link" href="#Comprehensions">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lst</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-    </div></section><section>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment" data-fragment-index="17">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Artur&#39;</span><span class="p">,</span> <span class="s">&#39;Oksana&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">,</span> <span class="s">&#39;Maria&#39;</span><span class="p">]</span>
-<span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Petro&#39;</span>  <span class="c"># rewriting by index</span>
-<span class="n">names</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="n">lst</span>
 </pre></div>
 
 </div>
@@ -794,70 +627,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Petro&apos;, &apos;Ivan&apos;, &apos;Artur&apos;, &apos;Oksana&apos;, &apos;David&apos;, &apos;Maria&apos;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="33">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Jane&#39;</span><span class="p">)</span>  <span class="c"># adding elements to end</span>
-<span class="n">names</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Petro&apos;, &apos;Ivan&apos;, &apos;Artur&apos;, &apos;Oksana&apos;, &apos;David&apos;, &apos;Maria&apos;, &apos;Jane&apos;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="34">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;Ivan&#39;</span><span class="p">)</span>  <span class="c"># inserting to specific position</span>
-<span class="n">names</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Petro&apos;, &apos;Ivan&apos;, &apos;Ivan&apos;, &apos;Artur&apos;, &apos;Oksana&apos;, &apos;David&apos;, &apos;Maria&apos;, &apos;Jane&apos;]</pre>
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</pre>
 </div>
 
 </div>
@@ -873,8 +643,12 @@ div.output_prompt {
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&#39;Ivan&#39;</span><span class="p">)</span>  <span class="c"># remove first occurence by value</span>
-<span class="n">names</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">imagine_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">first_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;Grigoriy&#39;</span><span class="p">,</span> <span class="s">&#39;Stepan&#39;</span><span class="p">,</span> <span class="s">&#39;Ivan&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">last_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;Skovoroda&#39;</span><span class="p">,</span> <span class="s">&#39;Bandera&#39;</span><span class="p">,</span> <span class="s">&#39;Franko&#39;</span><span class="p">]:</span>
+        <span class="n">imagine_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_name</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span><span class="p">)</span>
+        
+<span class="n">imagine_names</span>
 </pre></div>
 
 </div>
@@ -889,7 +663,15 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Petro&apos;, &apos;Ivan&apos;, &apos;Artur&apos;, &apos;Oksana&apos;, &apos;David&apos;, &apos;Maria&apos;, &apos;Jane&apos;]</pre>
+<pre>[&apos;Grigoriy Skovoroda&apos;,
+ &apos;Grigoriy Bandera&apos;,
+ &apos;Grigoriy Franko&apos;,
+ &apos;Stepan Skovoroda&apos;,
+ &apos;Stepan Bandera&apos;,
+ &apos;Stepan Franko&apos;,
+ &apos;Ivan Skovoroda&apos;,
+ &apos;Ivan Bandera&apos;,
+ &apos;Ivan Franko&apos;]</pre>
 </div>
 
 </div>
@@ -897,14 +679,17 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="36">
+</div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># remove element by index and return it</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Grigoriy&#39;</span><span class="p">,</span> <span class="s">&#39;Stepan&#39;</span><span class="p">,</span> <span class="s">&#39;Ivan&#39;</span><span class="p">]</span>
+<span class="n">last_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Skovoroda&#39;</span><span class="p">,</span> <span class="s">&#39;Bandera&#39;</span><span class="p">,</span> <span class="s">&#39;Franko&#39;</span><span class="p">]</span>
+<span class="n">imagine_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">l</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">first_names</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">last_names</span><span class="p">]</span>
+<span class="n">imagine_names</span>
 </pre></div>
 
 </div>
@@ -915,11 +700,19 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&apos;Petro&apos;</pre>
+<pre>[&apos;Grigoriy Skovoroda&apos;,
+ &apos;Grigoriy Bandera&apos;,
+ &apos;Grigoriy Franko&apos;,
+ &apos;Stepan Skovoroda&apos;,
+ &apos;Stepan Bandera&apos;,
+ &apos;Stepan Franko&apos;,
+ &apos;Ivan Skovoroda&apos;,
+ &apos;Ivan Bandera&apos;,
+ &apos;Ivan Franko&apos;]</pre>
 </div>
 
 </div>
@@ -927,113 +720,18 @@ div.output_prompt {
 </div>
 </div>
 
-</div>
-    </div><div class="fragment" data-fragment-index="37">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">names</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c"># without argument removes last element and returns it</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&apos;Jane&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ua_branch</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Oksana&#39;</span><span class="p">,</span> <span class="s">&#39;Petro&#39;</span><span class="p">]</span>
-<span class="n">us_branch</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;Jack&#39;</span><span class="p">]</span>
-<span class="n">all_company</span> <span class="o">=</span> <span class="n">ua_branch</span> <span class="o">+</span> <span class="n">us_branch</span>
-<span class="n">all_company</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Ivan&apos;, &apos;Oksana&apos;, &apos;Petro&apos;, &apos;Bob&apos;, &apos;Jack&apos;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="39">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Oksana&#39;</span><span class="p">,</span> <span class="s">&#39;Petro&#39;</span><span class="p">]</span>
-<span class="n">kyiv_department</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Inna&#39;</span><span class="p">,</span> <span class="s">&#39;Oleksandr&#39;</span><span class="p">]</span>
-<span class="n">lviv_department</span> <span class="o">+=</span> <span class="n">kyiv_department</span>  <span class="c"># same as list1.extend(list2)</span>
-<span class="n">lviv_department</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Ivan&apos;, &apos;Oksana&apos;, &apos;Petro&apos;, &apos;Inna&apos;, &apos;Oleksandr&apos;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="40">
+</div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">kyiv_department</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="n">d</span>
 </pre></div>
 
 </div>
@@ -1048,7 +746,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Inna&apos;, &apos;Oleksandr&apos;]</pre>
+<pre>{0: 90, 1: 90, 2: 90, 3: 90, 4: 90, 5: 90, 6: 90, 7: 90, 8: 90, 9: 90}</pre>
 </div>
 
 </div>
@@ -1056,15 +754,15 @@ div.output_prompt {
 </div>
 </div>
 
-</div>
-    </div></section><section>
+</div><div class="fragment" data-fragment-index="21">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+<span class="n">d</span>
 </pre></div>
 
 </div>
@@ -1075,11 +773,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[52]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Ivan&apos;, &apos;Oksana&apos;, &apos;Petro&apos;, &apos;Inna&apos;, &apos;Oleksandr&apos;]</pre>
+<pre>{0: 90, 1: 90, 2: 90, 3: 90, 4: 90, 5: 90, 6: 90, 7: 90, 8: 90, 9: 90}</pre>
 </div>
 
 </div>
@@ -1087,29 +785,70 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="42">
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="enumerate">enumerate<a class="anchor-link" href="#enumerate">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment" data-fragment-index="23">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c"># in-place sort</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s">&#39;abcd&#39;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(0, &apos;a&apos;)
+(1, &apos;b&apos;)
+(2, &apos;c&apos;)
+(3, &apos;d&apos;)
+</pre>
 </div>
-    </div><div class="fragment" data-fragment-index="43">
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="zip">zip<a class="anchor-link" href="#zip">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment" data-fragment-index="25">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">L1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1124,7 +863,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Inna&apos;, &apos;Ivan&apos;, &apos;Oksana&apos;, &apos;Oleksandr&apos;, &apos;Petro&apos;]</pre>
+<pre>[(1, &apos;one&apos;), (2, &apos;two&apos;), (3, &apos;three&apos;)]</pre>
 </div>
 
 </div>
@@ -1133,29 +872,88 @@ div.output_prompt {
 </div>
 
 </div>
-    </div><div class="fragment" data-fragment-index="44">
+    </div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Duck-typing">Duck typing<a class="anchor-link" href="#Duck-typing">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="or-&quot;Goose-typing&quot;,-according-to-Alex-Martelli">or "Goose typing", according to Alex Martelli<a class="anchor-link" href="#or-&quot;Goose-typing&quot;,-according-to-Alex-Martelli">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="When-I-see-a-bird-that-walks-like-a-duck-and-swims-like-a-duck-and-quacks-like-a-duck,-I-call-that-bird-a-duck">When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck<a class="anchor-link" href="#When-I-see-a-bird-that-walks-like-a-duck-and-swims-like-a-duck-and-quacks-like-a-duck,-I-call-that-bird-a-duck">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interface">Interface<a class="anchor-link" href="#Interface">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Protocol">Protocol<a class="anchor-link" href="#Protocol">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Iteration-protocol">Iteration protocol<a class="anchor-link" href="#Iteration-protocol">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="iter">iter<a class="anchor-link" href="#iter">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>  <span class="c"># in-place reverse</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="45">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">lviv_department</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Petro&#39;</span><span class="p">,</span> <span class="s">&#39;Lesia&#39;</span><span class="p">]</span>
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1166,11 +964,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Petro&apos;, &apos;Oleksandr&apos;, &apos;Oksana&apos;, &apos;Ivan&apos;, &apos;Inna&apos;]</pre>
+<pre>listiterator</pre>
 </div>
 
 </div>
@@ -1178,29 +976,14 @@ div.output_prompt {
 </div>
 </div>
 
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="List-elements-is-pointers-to-memory,-can-point-to-anything">List elements is pointers to memory, can point to anything<a class="anchor-link" href="#List-elements-is-pointers-to-memory,-can-point-to-anything">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
+</div><div class="fragment" data-fragment-index="34">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ua_branch</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s">&#39;Olga&#39;</span><span class="p">,</span> <span class="s">&#39;Viktoria&#39;</span><span class="p">]</span>
-<span class="n">us_branch</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="s">&#39;Dave&#39;</span><span class="p">]</span>
-<span class="n">ca_branch</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Rick&#39;</span><span class="p">,</span> <span class="s">&#39;Danny&#39;</span><span class="p">,</span> <span class="s">&#39;Alex&#39;</span><span class="p">]</span>
-<span class="n">all_branches</span> <span class="o">=</span> <span class="p">[</span><span class="n">ua_branch</span><span class="p">,</span> <span class="n">us_branch</span><span class="p">,</span> <span class="n">ca_branch</span><span class="p">]</span>
-<span class="n">all_branches</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">it</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1215,7 +998,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[[&apos;Ivan&apos;, &apos;Olga&apos;, &apos;Viktoria&apos;], [&apos;John&apos;, &apos;Dave&apos;], [&apos;Rick&apos;, &apos;Danny&apos;, &apos;Alex&apos;]]</pre>
+<pre>&apos;Ivan&apos;</pre>
 </div>
 
 </div>
@@ -1223,40 +1006,76 @@ div.output_prompt {
 </div>
 </div>
 
-</div></section><section>
+</div>
+    </div><div class="fragment" data-fragment-index="35">
     
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="And-what-if...">And what if...<a class="anchor-link" href="#And-what-if...">&#182;</a></h3>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">it</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="49">
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Petro&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">it</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Lesia&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment" data-fragment-index="37">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">victim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">victim</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">victim</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="50">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">victim</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">it</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1267,13 +1086,16 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">StopIteration</span>                             Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-36-54f0920595b2&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>it<span class="ansiblue">.</span>next<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[1, 2, [...]]</pre>
+<span class="ansired">StopIteration</span>: </pre>
 </div>
-
 </div>
 
 </div>
@@ -1287,18 +1109,77 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Some-new-functions-to-accompany-lists">Some new functions to accompany lists<a class="anchor-link" href="#Some-new-functions-to-accompany-lists">&#182;</a></h3>
+<h2 id="Generators">Generators<a class="anchor-link" href="#Generators">&#182;</a></h2>
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Loose-coupled-arch">Loose-coupled arch<a class="anchor-link" href="#Loose-coupled-arch">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="What-is-function?">What is function?<a class="anchor-link" href="#What-is-function?">&#182;</a></h4><p>Small (preferably) piece of code that do finite actions and return result.</p>
+<p>Everything except result is <em>side effect</em>.</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If function doesn't need to return anything, it returns <code>None</code></p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="def-ine"><code>def</code> ine<a class="anchor-link" href="#def-ine">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-<span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  <span class="c"># x and y can be absolutely any variable names</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c"># function saved, now it can be used</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">result</span>
 </pre></div>
 
 </div>
@@ -1309,11 +1190,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>20</pre>
+<pre>12</pre>
 </div>
 
 </div>
@@ -1321,14 +1202,17 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="53">
+</div></section><section>
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">with_side_effect</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Some action happened&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">with_side_effect</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1339,27 +1223,24 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>-3</pre>
-</div>
-
-</div>
-
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Some action happened
+</pre>
 </div>
 </div>
 
 </div>
-    </div><div class="fragment" data-fragment-index="54">
+</div>
+
+</div><div class="fragment" data-fragment-index="46">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">result</span>
 </pre></div>
 
 </div>
@@ -1370,11 +1251,11 @@ div.output_prompt {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>73</pre>
+<pre>6</pre>
 </div>
 
 </div>
@@ -1387,11 +1268,151 @@ div.output_prompt {
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">side_effect_only</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Side effect happened, but nothing returned&#39;</span><span class="p">)</span>
+    
+<span class="n">x</span> <span class="o">=</span> <span class="n">side_effect_only</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Side effect happened, but nothing returned
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment" data-fragment-index="48">
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exit w/o returning is equal to <code>return</code> and <code>return None</code>.</p>
+<p><code>return</code> is preferable</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Polymorphism">Polymorphism<a class="anchor-link" href="#Polymorphism">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Namespace">Namespace<a class="anchor-link" href="#Namespace">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment" data-fragment-index="52">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Variables names inside functions is local, if it overlaps with outer scope</li>
+<li>Variables from outer scope available for read and method calls</li>
+<li>If you need to change global variable, use <code>global</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="*args">*args<a class="anchor-link" href="#*args">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="**kwargs">**kwargs<a class="anchor-link" href="#**kwargs">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="defaults">defaults<a class="anchor-link" href="#defaults">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">bool_list</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
-<span class="nb">all</span><span class="p">(</span><span class="n">bool_list</span><span class="p">)</span>  <span class="c"># if all if elements is True-ish</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="n">degree</span>
+
+<span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1406,7 +1427,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>9</pre>
 </div>
 
 </div>
@@ -1414,77 +1435,14 @@ div.output_prompt {
 </div>
 </div>
 
-</div><div class="fragment" data-fragment-index="56">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">bool_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">bool_list</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[True, True, True, False]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="57">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">all</span><span class="p">(</span><span class="n">bool_list</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="58">
+</div><div class="fragment" data-fragment-index="57">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">any</span><span class="p">([</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>  <span class="c"># if at least 1 element is True-ish</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1499,7 +1457,38 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment" data-fragment-index="58">
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">power</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[49]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>256</pre>
 </div>
 
 </div>
@@ -1515,30 +1504,51 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="List-is-a-function-too">List is a function too<a class="anchor-link" href="#List-is-a-function-too">&#182;</a></h3>
+<h4 id="Mutable-defaults">Mutable defaults<a class="anchor-link" href="#Mutable-defaults">&#182;</a></h4>
 </div>
 </div>
 </div><div class="fragment" data-fragment-index="60">
     
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="And-it-takes-any-sequence*-as-argument">And it takes any sequence* as argument<a class="anchor-link" href="#And-it-takes-any-sequence*-as-argument">&#182;</a></h4><p>*not limited to</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span>
+<span class="n">bad_func</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-    </div></section><section>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment" data-fragment-index="61">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&#39;Konstantyn&#39;</span><span class="p">)</span>
-<span class="n">letters</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">bad_func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1553,7 +1563,7 @@ div.output_prompt {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;K&apos;, &apos;o&apos;, &apos;n&apos;, &apos;s&apos;, &apos;t&apos;, &apos;a&apos;, &apos;n&apos;, &apos;t&apos;, &apos;y&apos;, &apos;n&apos;]</pre>
+<pre>[1, 2]</pre>
 </div>
 
 </div>
@@ -1561,457 +1571,17 @@ div.output_prompt {
 </div>
 </div>
 
-</div></section><section>
+</div>
+    </div></section>
+    </section><section>
+    <section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Slicing">Slicing<a class="anchor-link" href="#Slicing">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
-<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>  <span class="c"># from 2nd (inc) up to 5th (exc)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[81]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[34, 14, 82]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="64">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[82]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[34, 14, 82, 41]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="65">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... too boring</p>
-
-</div>
-</div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[83]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[34, 14, 82, 41]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="67">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
-<span class="n">numbers</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[94]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[101, 215, 34, 14]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="68">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
-<span class="n">numbers</span><span class="p">[:]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[87]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[101, 215, 34, 14, 82, 41]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Copy-vs-pointer">Copy vs pointer<a class="anchor-link" href="#Copy-vs-pointer">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">mimic</span> <span class="o">=</span> <span class="n">original</span>  <span class="c"># new pointer to same memory array</span>
-<span class="n">mimic</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[79]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[1, 2, 3]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="71">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">original</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">mimic</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[80]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[1, 2, 3, 100]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mf">28.4</span><span class="p">]</span>
-<span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="p">[:]</span>  <span class="c"># copy</span>
-<span class="n">first</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">second</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">first</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[88]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[23, 28.4, 1]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="73">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">second</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[89]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[23, 28.4, 2]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">element</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="p">[:]</span>
-<span class="n">second</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[90]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[[1, 2], 3, 4]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="75">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">element</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[91]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="76">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">first</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[92]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[[1], 3, 4]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="77">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">second</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[93]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[[1], 3, 4]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lists-$\theta$">Lists $\theta$<a class="anchor-link" href="#Lists-$\theta$">&#182;</a></h3>
+<h1 id="import">import<a class="anchor-link" href="#import">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -2021,79 +1591,243 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th>op</th>
-<th>cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Copy</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Append[1]</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Insert</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Get Item</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Set Item</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Delete Item</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Iteration</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Set Slice</td>
-<td>O(k)</td>
-</tr>
-<tr>
-<td>Del Slice</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Set Slice</td>
-<td>O(k+n)</td>
-</tr>
-<tr>
-<td>Extend*</td>
-<td>O(k)</td>
-</tr>
-<tr>
-<td>Sort</td>
-<td>O(n log n)</td>
-</tr>
-<tr>
-<td>Multiply</td>
-<td>O(nk)</td>
-</tr>
-<tr>
-<td>x in s</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>min(s), max(s)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Get Length</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
+<h4 id="Groups-of-functions-(with-similar-purpose)-can-be-combined-in-single-file.">Groups of functions (with similar purpose) can be combined in single file.<a class="anchor-link" href="#Groups-of-functions-(with-similar-purpose)-can-be-combined-in-single-file.">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Practice!">Practice!<a class="anchor-link" href="#Practice!">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Modules">Modules<a class="anchor-link" href="#Modules">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Modules---further-aggregation-of-files">Modules - further aggregation of files<a class="anchor-link" href="#Modules---further-aggregation-of-files">&#182;</a></h4>
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Some-modules-from-std-lib">Some modules from std lib<a class="anchor-link" href="#Some-modules-from-std-lib">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="random"><code>random</code><a class="anchor-link" href="#random">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="datetime"><code>datetime</code><a class="anchor-link" href="#datetime">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="collections"><code>collections</code><a class="anchor-link" href="#collections">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="decimal"><code>decimal</code><a class="anchor-link" href="#decimal">&#182;</a></h2>
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Practice">Practice<a class="anchor-link" href="#Practice">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-to-install-packages-from-pypi.">How to install packages from pypi.<a class="anchor-link" href="#How-to-install-packages-from-pypi.">&#182;</a></h3><p>Install bobo</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="First-100-divisible-by-3,-5,-but-not-both">First 100 divisible by 3, 5, but not both<a class="anchor-link" href="#First-100-divisible-by-3,-5,-but-not-both">&#182;</a></h3><p>3 5 9 10 12 18 20 ...</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Guess-the-number">Guess the number<a class="anchor-link" href="#Guess-the-number">&#182;</a></h3><p>Guess the number: 10
+Wrong, guessed is greater. Next guess? 50
+Wrong, guessed is greater. Next guess? 34
+Right!</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Factorial">Factorial<a class="anchor-link" href="#Factorial">&#182;</a></h3>
+<pre><code>factorial(x)
+
+factorial(3) → 6
+
+factorial(4) → 24
+
+factorial(5) → 120</code></pre>
+<p>factorial for 100-500 should return result in sane time</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Caesar's-cypher">Caesar's cypher<a class="anchor-link" href="#Caesar's-cypher">&#182;</a></h3><p>Introduce ROT-X (de)coder</p>
+
+<pre><code>&gt;&gt;&gt; encode('Hello python!')
+'Hryyb clguba!'
+&gt;&gt;&gt; decode('Hryyb clguba!')
+'Hello python!'</code></pre>
+<p>Bonus: dynamic rotation</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multiplication-table-for-any-arbitrary-value">Multiplication table for any arbitrary value<a class="anchor-link" href="#Multiplication-table-for-any-arbitrary-value">&#182;</a></h3>
+<pre><code>&gt;&gt;&gt; table(12)
+  1|  2|  3|  4|  5|  6|  7|  8|  9| 10| 11| 12
+-----------------------------------------------
+  2|  4|  6|  8| 10| 12| 14| 16| 18| 20| 22| 24
+-----------------------------------------------
+  3|  6|  9| 12| 15| 18| 21| 24| 27| 30| 33| 36
+-----------------------------------------------
+  4|  8| 12| 16| 20| 24| 28| 32| 36| 40| 44| 48
+-----------------------------------------------
+  5| 10| 15| 20| 25| 30| 35| 40| 45| 50| 55| 60
+-----------------------------------------------
+  6| 12| 18| 24| 30| 36| 42| 48| 54| 60| 66| 72
+-----------------------------------------------
+  7| 14| 21| 28| 35| 42| 49| 56| 63| 70| 77| 84
+-----------------------------------------------
+  8| 16| 24| 32| 40| 48| 56| 64| 72| 80| 88| 96
+-----------------------------------------------
+  9| 18| 27| 36| 45| 54| 63| 72| 81| 90| 99|108
+-----------------------------------------------
+ 10| 20| 30| 40| 50| 60| 70| 80| 90|100|110|120
+-----------------------------------------------
+ 11| 22| 33| 44| 55| 66| 77| 88| 99|110|121|132
+-----------------------------------------------
+ 12| 24| 36| 48| 60| 72| 84| 96|108|120|132|144</code></pre>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fibonacci-numbers">Fibonacci numbers<a class="anchor-link" href="#Fibonacci-numbers">&#182;</a></h3><ol>
+<li>Get first $F$ &gt; 10 000 000</li>
+<li>Get first $F$ with symbols &gt; 1000</li>
+<li>Get symbols count in $F_{100000}$</li>
+</ol>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Palindromes">Palindromes<a class="anchor-link" href="#Palindromes">&#182;</a></h3>
+<pre><code>is_palindrome('madam') → True
+is_palindrome('refer') → True
+is_palindrome('dare') → False</code></pre>
+<p>Bonus:</p>
+
+<pre><code>is_palindrome('Eva, can I stab bats in a cave?') → True</code></pre>
+<p>Extra bonus:</p>
+
+<pre><code>can_be_palindrome('abc') → False
+can_be_palindrome('aabb') → True</code></pre>
 
 </div>
 </div>
@@ -2106,164 +1840,7 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="tuple">tuple<a class="anchor-link" href="#tuple">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tuples-is-just-like-lists,-but-tuples-are-immutable">Tuples is just like lists, but tuples are immutable<a class="anchor-link" href="#Tuples-is-just-like-lists,-but-tuples-are-immutable">&#182;</a></h3><p>So, they don't support any in-place changing methods</p>
-
-</div>
-</div>
-</div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">seasons</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Winter&#39;</span><span class="p">,</span> <span class="s">&#39;Spring&#39;</span><span class="p">,</span> <span class="s">&#39;Summer&#39;</span><span class="p">,</span> <span class="s">&#39;Fall&#39;</span><span class="p">)</span>
-<span class="n">seasons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[57]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&apos;Winter&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="83">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">seasons</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Early Fall&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-58-3aeef8e17a59&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>seasons<span class="ansiblue">[</span><span class="ansicyan">2</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansiblue">&apos;Early Fall&apos;</span><span class="ansiblue"></span>
-
-<span class="ansired">TypeError</span>: &apos;tuple&apos; object does not support item assignment</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">seasons</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-59-7a08a12c36bb&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>seasons<span class="ansiblue">.</span>pop<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-
-<span class="ansired">AttributeError</span>: &apos;tuple&apos; object has no attribute &apos;pop&apos;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="85">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">seasons</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-60-c2a7a4437aed&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>seasons<span class="ansiblue">.</span>sort<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-
-<span class="ansired">AttributeError</span>: &apos;tuple&apos; object has no attribute &apos;sort&apos;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="So,-why-to-use-tuples-instead-of-lists?">So, why to use tuples instead of lists?<a class="anchor-link" href="#So,-why-to-use-tuples-instead-of-lists?">&#182;</a></h3><ul>
-<li>immutability is a plus sometimes</li>
-<li>tuples are faster</li>
-<li>tuples take less memory</li>
-</ul>
+<h3 id="Pangram-checker">Pangram checker<a class="anchor-link" href="#Pangram-checker">&#182;</a></h3><p><code>is_pangram('The quick brown fox jumps over the lazy dog') → True</code></p>
 
 </div>
 </div>
@@ -2274,7 +1851,15 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Caveats">Caveats<a class="anchor-link" href="#Caveats">&#182;</a></h3>
+<h3 id="Words-game">Words game<a class="anchor-link" href="#Words-game">&#182;</a></h3>
+<pre><code>Player 1 turn: game
+Player 2 turn: engage
+Player 1 turn: envy
+Player 2 turn: why
+You must enter word starting with "y"! Player 2 turn: yield
+Player 1 turn:
+Player 2 won!</code></pre>
+
 </div>
 </div>
 </div></section><section>
@@ -2284,223 +1869,28 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="One-item-tuples">One-item tuples<a class="anchor-link" href="#One-item-tuples">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment" data-fragment-index="89">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;variable&#39;</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
-</pre></div>
+<h3 id="Pythagorean-triplets">Pythagorean triplets<a class="anchor-link" href="#Pythagorean-triplets">&#182;</a></h3><p>$x^2 + y^2 = z^2$</p>
+
+<pre><code>&gt;&gt;&gt; triplets(4)
+[3, 4, 5]
+[6, 8, 10]
+[5, 12, 13]
+[9, 12, 15]</code></pre>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[61]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>str</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div><div class="fragment" data-fragment-index="90">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">my_tuple</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[62]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&apos;variable&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;variable&#39;</span><span class="p">,</span> <span class="p">)</span>  <span class="c"># note the comma</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[65]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>tuple</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="92">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">my_tuple</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&apos;variable&apos;,)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section><section>
+</div></section><section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Mutable-immutable">Mutable immutable<a class="anchor-link" href="#Mutable-immutable">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment" data-fragment-index="94">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Tuples are immutable, but they can change</p>
+<h3 id="A-little-bit-of-hardcore">A little bit of hardcore<a class="anchor-link" href="#A-little-bit-of-hardcore">&#182;</a></h3><p>Squared paper traveller</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">x_files</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Scully&#39;</span><span class="p">,</span> <span class="s">&#39;Mulder&#39;</span><span class="p">]</span>
-<span class="n">cases</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;UFO&#39;</span><span class="p">,</span> <span class="s">&#39;Aliens&#39;</span><span class="p">,</span> <span class="s">&#39;Insects&#39;</span><span class="p">]</span>
-<span class="n">x_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cases</span><span class="p">)</span>
-<span class="n">x_files</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x_files</span><span class="p">)</span>  <span class="c"># tuple is also a function</span>
-<span class="n">x_files</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[71]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&apos;Scully&apos;, &apos;Mulder&apos;, [&apos;UFO&apos;, &apos;Aliens&apos;, &apos;Insects&apos;])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment" data-fragment-index="96">
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">cases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Ghost&#39;</span><span class="p">)</span>
-<span class="n">x_files</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&apos;Scully&apos;, &apos;Mulder&apos;, [&apos;UFO&apos;, &apos;Aliens&apos;, &apos;Insects&apos;, &apos;Ghost&apos;])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    </div></section>
+</div></section>
     </section>
 </div>
 </div>
