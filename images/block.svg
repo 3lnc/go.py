@@ -55,22 +55,19 @@ h6::before { content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4
 .hljs-deletion { background-color: rgb(255, 200, 189); }
 .hljs-comment .hljs-doctag { font-weight: bold; }
 .method .hljs-id { color: rgb(0, 0, 0); }]]></style></defs><g transform="translate(8,16 )">
+<path d="M 80,96 L 80,144 " style="fill:none;stroke:#000;"/>
 <path d="M 128,16 L 128,208 " style="fill:none;stroke:#000;"/>
-<path d="M 96,80 L 120,80 " style="fill:none;stroke:#000;"/>
+<path d="M 168,96 L 168,144 " style="fill:none;stroke:#000;"/>
+<path d="M 96,80 L 152,80 " style="fill:none;stroke:#000;"/>
 <path d="M 64,112 L 120,112 " style="fill:none;stroke:#000;"/>
 <path d="M 136,112 L 184,112 " style="fill:none;stroke:#000;"/>
-<path d="M 16,144 L 72,144 " style="fill:none;stroke:#000;"/>
-<path d="M 96,144 L 120,144 " style="fill:none;stroke:#000;"/>
-<path d="M 136,144 L 152,144 " style="fill:none;stroke:#000;"/>
-<path d="M 176,144 L 232,144 " style="fill:none;stroke:#000;"/>
+<path d="M 16,144 L 232,144 " style="fill:none;stroke:#000;"/>
 <path d="M 128,112 L 176,16 " style="fill:none;stroke:#000;"/>
 <path d="M 96,80 C 79.2,80 80,96 80,96 " style="fill:none;stroke:#000;"/>
 <path d="M 152,80 C 168.8,80 168,96 168,96 " style="fill:none;stroke:#000;"/>
-<path d="M 96,144 C 79.2,144 80,128 80,128 " style="fill:none;stroke:#000;"/>
-<path d="M 152,144 C 168.8,144 168,128 168,128 " style="fill:none;stroke:#000;"/>
 <polygon points="192,112 180,106.4 180,117.6 " style="fill:#000" transform="rotate(0,184,112 )"/>
 <polygon points="184,16 172,10.4 172,21.6 " style="fill:#000" transform="rotate(296.565051177078,176,16 )"/>
 <polygon points="136,208 124,202.4 124,213.6 " style="fill:#000" transform="rotate(90,128,208 )"/>
 <polygon points="136,16 124,10.4 124,21.6 " style="fill:#000" transform="rotate(270,128,16 )"/>
 <polygon points="72,112 60,106.4 60,117.6 " style="fill:#000" transform="rotate(180,64,112 )"/>
-<circle cx="128" cy="112" r="6" style="fill:#FFF;stroke:#000;"/><g transform="translate(0,0)"><text text-anchor="middle" x="112" y="20" style="fill:#000">N</text><text text-anchor="middle" x="192" y="20" style="fill:#000">F</text><text text-anchor="middle" x="136" y="84" style="fill:#000">-</text><text text-anchor="middle" x="48" y="100" style="fill:#000">f</text><text text-anchor="middle" x="200" y="100" style="fill:#000">E</text><text text-anchor="middle" x="144" y="212" style="fill:#000">m</text><text text-anchor="middle" x="152" y="212" style="fill:#000">g</text></g></g></svg>
+<circle cx="128" cy="112" r="6" style="fill:#FFF;stroke:#000;"/><g transform="translate(0,0)"><text text-anchor="middle" x="112" y="20" style="fill:#000">N</text><text text-anchor="middle" x="192" y="20" style="fill:#000">F</text><text text-anchor="middle" x="48" y="100" style="fill:#000">f</text><text text-anchor="middle" x="200" y="100" style="fill:#000">E</text><text text-anchor="middle" x="144" y="212" style="fill:#000">m</text><text text-anchor="middle" x="152" y="212" style="fill:#000">g</text></g></g></svg>
